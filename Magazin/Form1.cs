@@ -121,7 +121,7 @@ namespace Magazin
         private void Delete_Click(object sender, EventArgs e)
         {
             var conect = new SqlConnection(connection);
-            if (dataGridView1.Rows.Count != 0 )
+            if (dataGridView1.Rows.Count != 0)
             {
                 var articul = (dataGridView1.SelectedRows[0].DataBoundItem as DataRowView).Row.ItemArray[0].ToString();
                 try
@@ -210,13 +210,39 @@ namespace Magazin
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var but = sender as Button;
+            switch (but.Tag)
+            {
+                case "Фабрика":
+                    {
+
+                        break;
+                    }
+                case "Должность":
+                    {
+                        break;
+                    }
+                case "Тип":
+                    {
+                        var form = new Type_Mebel();
+                        form.ShowDialog();
+                        break;
+                    }
+
+            }
+        }
+
+
     }
 }
 
